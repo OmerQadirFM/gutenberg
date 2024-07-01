@@ -2,8 +2,6 @@
 	"$schema": "https://json.schemastore.org/tsconfig.json",
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
-		"rootDir": "src",
-		"declarationDir": "build-types",
 		"noUnusedParameters": false,
 		"checkJs": false
 	},
@@ -16,5 +14,5 @@
 		{ "path": "../priority-queue" },
 		{ "path": "../redux-routine" }
 	],
-	"include": [ "src/**/*" ]
+	"include": [ "src" ]
 }
