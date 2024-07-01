@@ -10,8 +10,6 @@ import type { APIFetchOptions } from '@wordpress/api-fetch';
 /**
  * Dispatches a control action for triggering an api fetch call.
  *
- * @param {Object} request Arguments for the fetch request.
- *
  * @example
  * ```js
  * import { apiFetch } from '@wordpress/data-controls';
@@ -24,7 +22,8 @@ import type { APIFetchOptions } from '@wordpress/api-fetch';
  * }
  * ```
  *
- * @return {Object} The control descriptor.
+ * @param request Arguments for the fetch request.
+ * @return The control descriptor.
  */
 export function apiFetch( request: APIFetchOptions ): {
 	type: 'API_FETCH';
@@ -106,8 +105,6 @@ export function dispatch(
 /**
  * Dispatches a control action for awaiting on a promise to be resolved.
  *
- * @param {Object} promise Promise to wait for.
- *
  * @example
  * ```js
  * import { __unstableAwaitPromise } from '@wordpress/data-controls';
@@ -120,7 +117,8 @@ export function dispatch(
  * }
  * ```
  *
- * @return {Object} The control descriptor.
+ * @param promise Promise to wait for.
+ * @return The control descriptor.
  */
 export const __unstableAwaitPromise = function < T >( promise: Promise< T > ): {
 	type: 'AWAIT_PROMISE';
@@ -133,8 +131,7 @@ export const __unstableAwaitPromise = function < T >( promise: Promise< T > ): {
 };
 
 /**
- * The default export is what you use to register the controls with your custom
- * store.
+ * The default export is what you use to register the controls with your custom store.
  *
  * @example
  * ```js
@@ -149,15 +146,13 @@ export const __unstableAwaitPromise = function < T >( promise: Promise< T > ): {
  * import * as resolvers from './resolvers';
  *
  * registerStore( 'my-custom-store', {
- * reducer,
- * controls,
- * actions,
- * selectors,
- * resolvers,
+ * 	reducer,
+ * 	controls,
+ * 	actions,
+ * 	selectors,
+ * 	resolvers,
  * } );
  * ```
- * @return {Object} An object for registering the default controls with the
- * store.
  */
 export const controls = {
 	AWAIT_PROMISE: < T >( {
