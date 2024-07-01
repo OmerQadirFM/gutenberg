@@ -7,7 +7,7 @@
 		"isolatedDeclarations": false,
 
 		"module": "CommonJS",
-		"rootDir": "rules"
+		"rootDir": "."
 	},
 	"references": [ { "path": "../prettier-config" } ],
 	// NOTE: This package is being progressively typed. You are encouraged to

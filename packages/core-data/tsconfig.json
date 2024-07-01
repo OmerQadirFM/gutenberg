@@ -2,9 +2,12 @@
 	"$schema": "https://json.schemastore.org/tsconfig.json",
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
+		"allowJs": true,
 		"checkJs": false,
-		"noUnusedParameters": false,
-		"noImplicitAny": false
+		"isolatedDeclarations": false,
+
+		"noImplicitAny": false,
+		"noUnusedParameters": false
 	},
 	"references": [
 		{ "path": "../api-fetch" },
