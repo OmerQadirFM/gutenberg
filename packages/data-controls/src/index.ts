@@ -120,7 +120,7 @@ export function dispatch(
  * @param promise Promise to wait for.
  * @return The control descriptor.
  */
-export const __unstableAwaitPromise = function < T >( promise: Promise< T > ): {
+export function __unstableAwaitPromise< T >( promise: Promise< T > ): {
 	type: 'AWAIT_PROMISE';
 	promise: Promise< T >;
 } {
@@ -128,7 +128,7 @@ export const __unstableAwaitPromise = function < T >( promise: Promise< T > ): {
 		type: 'AWAIT_PROMISE',
 		promise,
 	};
-};
+}
 
 /**
  * The default export is what you use to register the controls with your custom store.
