@@ -170,12 +170,15 @@ window.addEventListener( 'popstate', async () => {
 if ( globalThis.IS_GUTENBERG_PLUGIN ) {
 	if ( navigationMode === 'fullPage' ) {
 		// Cache the scripts. Has to be called before fetching the assets.
-		[].map.call( document.querySelectorAll( 'script[src]' ), ( script ) => {
-			headElements.set( script.getAttribute( 'src' ), {
-				tag: script,
-				text: script.textContent,
-			} );
-		} );
+		[].map.call(
+			document.querySelectorAll( 'script[src]' ),
+			( script: HTMLScriptElement ) => {
+				headElements.set( script.getAttribute( 'src' ), {
+					tag: script,
+					text: script.textContent,
+				} );
+			}
+		);
 		await fetchHeadAssets( document, headElements );
 	}
 }
