@@ -39,11 +39,11 @@ export function* myAction() {
 
 _Parameters_
 
--   _request_ `APIFetchOptions`: Arguments for the fetch request.
+-   _request_ `Object`: Arguments for the fetch request.
 
 _Returns_
 
--   `{ type: 'API_FETCH'; request: APIFetchOptions; }`: The control descriptor.
+-   `Object`: The control descriptor.
 
 ### controls
 
@@ -70,6 +70,10 @@ registerStore( 'my-custom-store', {
 	resolvers,
 } );
 ```
+
+_Returns_
+
+-   `Object`: An object for registering the default controls with the store.
 
 ### dispatch
 
