@@ -4,6 +4,8 @@
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": false,
+		"isolatedDeclarations": false,
+
 		"types": [ "gutenberg-env" ]
 	},
 	"references": [
